@@ -1,2 +1,3 @@
-# CSChat
+# CS Chat
+
 Practice mini side-project
