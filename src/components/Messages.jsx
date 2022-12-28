@@ -18,7 +18,6 @@ export default function MessagesRecieved(props) {
       <div className="content">
         <div className="Messages--sender">
           {sender}
-          {console.log(sender)}
         </div>
         <div className="Messages--content">
           {message}

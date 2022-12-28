@@ -11,36 +11,60 @@
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  padding: 30px;
 }
 
 .messages-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  max-width: 800px;
+  width: 100%;
   /* border: 1px solid black; */
+}
+
+.message-scroll {
+  padding: 20px 20px;
+  border: 1px solid black;
+  max-height: 600px;
+  height: 100%;
+  overflow: scroll;
+  width: 100%;
 }
 
 .content {
   display: flex;
   border: 1px solid black;
-  width: 10vw;
-  justify-content: center;
+  /* max-width: 1000px; */
+  /* width: 100%; */
 
+}
+
+.Messages--sender{
+  align-items: flex-start;
+  color: green;
 }
 
 .MessagesRecieved {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: center; */
 
 }
 
 .Messages--time {
   justify-content: baseline;
   align-self: flex-end;
+  color: red;
+}
+
+.Messages--content {
+  justify-content: center;
+  align-items: center;
+  color: blue;
 }

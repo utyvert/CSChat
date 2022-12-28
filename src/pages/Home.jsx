@@ -5,7 +5,7 @@ import MessagesRecieved from '../components/Messages';
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
-  const messagesToDisplay = messages.slice(-50);
+  const messagesToDisplay = messages.slice(0, 50).reverse()
   console.log(messagesToDisplay)
 
   useEffect(() => {
@@ -18,6 +18,12 @@ export default function Home() {
         console.log(error)
       });
   }, []);
+  
+
+  useEffect(() => {
+    const scrollDiv = document.querySelector('.message-scroll');
+    scrollDiv.scrollTop = scrollDiv.scrollHeight;
+  }, [messages]);
   
 
 
