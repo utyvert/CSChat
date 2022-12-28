@@ -21,6 +21,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
+.content {
+  display: flex;
+  border: 1px solid black;
+  width: 10vw;
+  justify-content: center;
+
+}
+
+.MessagesRecieved {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.Messages--time {
+  justify-content: baseline;
+  align-self: flex-end;
+}

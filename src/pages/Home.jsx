@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import Messages from '../components/Messages';
+import MessagesRecieved from '../components/Messages';
 
 
 export default function Home() {
@@ -33,10 +33,10 @@ export default function Home() {
           </div>
           <div className="message-scroll">
             {messagesToDisplay.map(message => {
-              return <Messages
+              return <MessagesRecieved
               message = {message['message']}
               time = {message['created_at']}
-              sender = {messages['created_by']}
+              sender = {message['created_by']}
               />
             })}
           </div>
