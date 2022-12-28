@@ -36,16 +36,19 @@
   width: 100%;
 }
 
-.content {
+.upper-content {
   display: flex;
+  justify-content: center;
   border: 1px solid black;
   /* max-width: 1000px; */
   /* width: 100%; */
+}
 
+.lower--content {
+  display: flex;
 }
 
 .Messages--sender{
-  align-items: flex-start;
   color: green;
 }
 
@@ -58,8 +61,7 @@
 }
 
 .Messages--time {
-  justify-content: baseline;
-  align-self: flex-end;
+  justify-content: flex-end;
   color: red;
 }
 
