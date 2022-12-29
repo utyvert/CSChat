@@ -3,7 +3,7 @@
 }
 
 .header {
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 24px;
   font-weight: bold;
 }
@@ -11,10 +11,10 @@
 
 .container {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  /* padding: 30px; */
 }
 
 .messages-container {
@@ -28,7 +28,7 @@
 }
 
 .message-scroll {
-  padding: 20px 20px;
+  /* padding: 20px 20px; */
   border: 1px solid black;
   max-height: 600px;
   height: 100%;
@@ -44,9 +44,11 @@
   /* width: 100%; */
 }
 
-.lower--content {
+.lower-content {
   display: flex;
+  justify-content: space-between;
 }
+
 
 .Messages--sender{
   color: green;
@@ -55,6 +57,7 @@
 .MessagesRecieved {
   display: flex;
   flex-direction: column;
+  padding: 15px 5px;
   /* justify-content: space-between; */
   /* align-items: center; */
 
@@ -69,4 +72,18 @@
   justify-content: center;
   align-items: center;
   color: blue;
+}
+
+.container-foot {
+  /* border: 1px solid black; */
+  padding-top: 20px;
+  height: 50px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.input-message {
+  width: 100%;
+  max-width: 700px;
+  height: 70%;
 }

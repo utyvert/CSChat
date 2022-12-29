@@ -46,11 +46,10 @@ export default function Home() {
               />
             })}
           </div>
-          <div className="messages-foot">
-
-          </div>
-
         </div>
+        <div className="container-foot">
+          <input className='input-message' type="text"/><button>Send</button>
+        </div>  
 
       
       </div>
