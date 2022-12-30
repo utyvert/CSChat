@@ -15,17 +15,18 @@ export default function MessagesRecieved(props) {
 
   return (
     <div className='MessagesRecieved'>
-      <div className="content">
-        <div className="Messages--sender">
-          {sender}
-          {console.log(sender)}
-        </div>
+      <div className="upper-content">
         <div className="Messages--content">
           {message}
         </div>
       </div>
-      <div className="Messages--time">
-        {convertDate(time)}
+      <div className="lower-content">
+        <div className="Messages--sender">
+            {sender}
+          </div>
+        <div className="Messages--time">
+          {convertDate(time)}
+        </div>
       </div>
     </div>
   )
