@@ -8,6 +8,13 @@ export default function Home() {
   const messagesToDisplay = messages.slice(0, 50).reverse()
 
   const [sendMessage, setSendMessage] = useState('');
+  const [autoScroll, setAutoScroll] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  function toggleAutoScroll() {
+    setAutoScroll(!autoScroll);
+  }
+  
 
   useEffect(() => {
     fetchMessages();
@@ -16,6 +23,10 @@ export default function Home() {
   }, []);
   
   function fetchMessages() {
+
+    const scrollDiv = document.querySelector('.message-scroll');
+    setScrollPosition(scrollDiv.scrollTop);
+
     fetch('https://curriculum-api.codesmith.io/messages')
       .then(response => response.json())
       .then(data => {
@@ -27,11 +38,17 @@ export default function Home() {
   }
 
 
-
   useEffect(() => {
     const scrollDiv = document.querySelector('.message-scroll');
     scrollDiv.scrollTop = scrollDiv.scrollHeight;
-  }, [messages]);
+  }, []);
+  
+
+  useEffect(() => {
+    // Restore the scroll position after the refresh
+    const scrollDiv = document.querySelector('.message-scroll');
+    scrollDiv.scrollTop = scrollPosition;
+  }, [scrollPosition]);
   
 
 
@@ -67,11 +84,20 @@ export default function Home() {
           </div>
           <div className="message-scroll">
             {messagesToDisplay.map(message => {
-              return <MessagesRecieved
-              message = {message['message']}
-              time = {message['created_at']}
-              sender = {message['created_by']}
+              if (message['created_by'] !== 'Uty') {
+                return <MessagesRecieved
+                message = {message['message']}
+                time = {message['created_at']}
+                sender = {message['created_by']}
               />
+              } else {
+                return <MessagesRecieved 
+                // fix this !! new component for non-self messages
+                message = {message['message']}
+                time = {message['created_at']}
+                sender = {message['created_by']}
+              />
+              }
             })}
           </div>
         </div>
