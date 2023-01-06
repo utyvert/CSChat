@@ -32,6 +32,8 @@ body {
 
 .message-scroll {
   /* padding: 20px 20px; */
+  display: flex;
+  flex-direction: column;
   border: 1px solid black;
   max-height: 600px;
   height: 100%;
@@ -42,9 +44,10 @@ body {
 
 .upper-content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   border: 1px solid black;
   border-radius: 6px;
+  padding: 10px;
   /* max-width: 1000px; */
   /* width: 100%; */
 }
@@ -63,6 +66,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 15px 5px;
+  margin-right: auto;
+  width: 40%;
   /* justify-content: space-between; */
   /* align-items: center; */
 
@@ -113,14 +118,19 @@ body {
   display: flex;
   flex-direction: column;
   padding: 15px 5px;
+  margin-left: auto;
+  width: 40%;
 }
 
 .upper-content-s {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   border: 1px solid black;
   border-radius: 6px;
+  padding: 10px;
+
   background-color: blue;
+  
 }
 
 .Messages--content-s {
