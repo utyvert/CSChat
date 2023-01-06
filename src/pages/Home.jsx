@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import MessagesRecieved from '../components/Messages';
+import MessagesRecieved from '../components/MessagesRecieved';
+import MessagesSent from '../components/MessagesSent'
 
 
 export default function Home() {
@@ -91,7 +92,7 @@ export default function Home() {
                 sender = {message['created_by']}
               />
               } else {
-                return <MessagesRecieved 
+                return <MessagesSent 
                 // fix this !! new component for non-self messages
                 message = {message['message']}
                 time = {message['created_at']}

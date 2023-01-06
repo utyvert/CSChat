@@ -106,3 +106,25 @@ body {
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* messages sent */
+
+.MessagesSent {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 5px;
+}
+
+.upper-content-s {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 6px;
+  background-color: blue;
+}
+
+.Messages--content-s {
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
