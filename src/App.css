@@ -3,12 +3,14 @@
 }
 
 body {
-  background-color: lightgrey;
+  background-color: #4d4d4d;
 }
 .header {
   /* padding: 20px; */
   font-size: 24px;
   font-weight: bold;
+  color: white;
+  padding: 40px;
 }
 
 
@@ -32,22 +34,37 @@ body {
 
 .message-scroll {
   /* padding: 20px 20px; */
+  background-color: #1A1A1A;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   max-height: 600px;
   height: 100%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
   border-radius: 6px;
 }
 
+.message-scroll::-webkit-scrollbar {
+  width: 3px; /* width of the scrollbar */
+  background-color: #1A1A1A; /* background color of the scrollbar */
+}
+
+#message-scroll::-webkit-scrollbar-thumb {
+  background-color: #393939; /* color of the scrollbar thumb */
+  border-radius: 10px; /* roundness of the scrollbar thumb */
+}
+
+
 .upper-content {
   display: flex;
-  justify-content: flex-start;
-  border: 1px solid black;
+  justify-content: center;
+  /* border: 1px solid black; */
   border-radius: 6px;
+  border-radius: 4px 18px 18px 18px;
   padding: 10px;
+  background-color: #26262A
   /* max-width: 1000px; */
   /* width: 100%; */
 }
@@ -55,11 +72,13 @@ body {
 .lower-content {
   display: flex;
   justify-content: space-between;
+  font-size: 12px;
+  padding-top: 5px;
 }
 
 
 .Messages--sender{
-  color: green;
+  color: #757575
 }
 
 .MessagesRecieved {
@@ -67,7 +86,7 @@ body {
   flex-direction: column;
   padding: 15px 5px;
   margin-right: auto;
-  width: 40%;
+  max-width: 40%;
   /* justify-content: space-between; */
   /* align-items: center; */
 
@@ -75,13 +94,15 @@ body {
 
 .Messages--time {
   justify-content: flex-end;
-  color: red;
+  color: #757575;
+  margin-left: 5px;
 }
 
 .Messages--content {
-  justify-content: center;
-  align-items: center;
-  color: blue;
+  /* justify-content: center;
+  /* align-items: center; */
+  text-align: left;
+  color: white; 
 }
 
 .container-foot {
@@ -104,7 +125,7 @@ body {
 
 .send-btn {
   margin-left: -85px;
-  background-color: blue;
+  background-color: #3477F0;
   border: none;
   padding: 5px 20px;
   color: white;
@@ -119,22 +140,22 @@ body {
   flex-direction: column;
   padding: 15px 5px;
   margin-left: auto;
-  width: 40%;
+  max-width: 40%;
 }
 
 .upper-content-s {
   display: flex;
-  justify-content: flex-end;
-  border: 1px solid black;
-  border-radius: 6px;
+  justify-content: center;
+  /* border: 1px solid black; */
+  border-radius: 18px 4px 18px 18px;
   padding: 10px;
-
-  background-color: blue;
+  background-color: #3477F0;
   
 }
 
 .Messages--content-s {
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: right;
   color: white;
 }

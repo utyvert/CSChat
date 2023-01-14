@@ -6,7 +6,7 @@ import MessagesSent from '../components/MessagesSent'
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
-  const messagesToDisplay = messages.slice(0, 50).reverse()
+  const messagesToDisplay = messages.slice(0, 50)
 
   const [sendMessage, setSendMessage] = useState('');
   const [autoScroll, setAutoScroll] = useState(true);
@@ -28,9 +28,10 @@ export default function Home() {
     const scrollDiv = document.querySelector('.message-scroll');
     setScrollPosition(scrollDiv.scrollTop);
 
-    fetch('https://curriculum-api.codesmith.io/messages')
+    fetch('http://chatserver-env.eba-byk6vapm.us-west-2.elasticbeanstalk.com/messages')
       .then(response => response.json())
       .then(data => {
+        // console.log(data)
         setMessages(data);
       })
       .catch(error => {
@@ -54,15 +55,15 @@ export default function Home() {
 
 
   function handleClick() {
-    fetch('https://curriculum-api.codesmith.io/messages', {
+    fetch('http://chatserver-env.eba-byk6vapm.us-west-2.elasticbeanstalk.com/messages', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
-  mode: 'no-cors',
+  // mode: 'no-cors'
   body: JSON.stringify({
     message: sendMessage,
-    created_by: 'Uty'
+    author: 'Uty'
   })
   });
   setSendMessage('');  
@@ -85,18 +86,18 @@ export default function Home() {
           </div>
           <div className="message-scroll">
             {messagesToDisplay.map(message => {
-              if (message['created_by'] !== 'Uty') {
+              if (message['author'] !== 'Uty') {
                 return <MessagesRecieved
                 message = {message['message']}
-                time = {message['created_at']}
-                sender = {message['created_by']}
+                time = {message['dateTime']}
+                sender = {message['author']}
               />
               } else {
                 return <MessagesSent 
                 // fix this !! new component for non-self messages
                 message = {message['message']}
-                time = {message['created_at']}
-                sender = {message['created_by']}
+                time = {message['dateTime']}
+                sender = {message['author']}
               />
               }
             })}
